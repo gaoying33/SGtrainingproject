@@ -1,0 +1,26 @@
+<div class="topbar-wrap white">
+	<div class="topbar-inner">
+		<div class="topbar-logo-wrap">
+			<span class="topbar-logo ">MoPower </span>
+		</div>
+		<div class="top-info-wrap">
+			<ul class="top-info-list">
+				<li>欢迎</li>
+				<li><a data-bind="click: showModalDialog" href="">登陆</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div>
+	<menu params="menuItems:  menuItems,
+			onSelectItemChanged: onSelectItemChanged"></menu>
+</div>
+
+
+<modaldialog params="
+	title:'Hi!你好',
+	isShowDialog: isShowDialog,
+	isContentType:false,
+	templateOptions:templateOptions,
+	isShowCloseBtn: false,
+	isShowConfirmBtn: false"></modaldialog>
