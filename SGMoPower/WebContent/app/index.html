@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MoPower</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="../cube/scripts/framework.js" type="text/javascript" charset="utf-8"></script>
+<script data-main='app/model.js' src='../cube/scripts/libs/require.js'></script>
+
+<link rel="stylesheet" type="text/css" href="./resources/css/common.css" />
+<script type="text/javascript" src="./resources/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="./resources/js/map.js"></script>
+
+<script>
+	jQuery.support.cors = true;
+</script>
+		
+		 <!--取消百度地图水印 -->
+	<style type="text/css">
+	      .anchorBL{display:none;}
+	</style>
+
+</head>
+<body>
+	<div data-bind="component: { name:'app.head.main'}"></div>
+	 <include params="{url:'app.content.'+contentUrl(),params:{}}"></include>
+	<!-- <div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="right-main">
+					 <include params="{url:'app.content.'+contentUrl(),params:{}}"></include>
+				</div>
+			</div>
+		</div>
+	</div> -->
+</body>
+</html>
