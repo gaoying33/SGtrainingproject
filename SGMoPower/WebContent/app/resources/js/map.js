@@ -347,7 +347,11 @@ function addSearchBox(){
 	  searchbtn.type = "button";
 	  searchbtn.id = "searchbtn";
 	  searchbtn.appendChild(document.createTextNode("下单"));
-	  searchbtn.className = "btn";
+	  searchbtn.className = "btn btn-primary";
+	 // searchbtn.style.backgroundColor = "#006569";
+	//  searchbtn.style.color = "#006569";
+	 // searchbtn.css('color','#006569');
+
 	  searchbtn.style.marginBottom="0px";
 	  searchbtn.onclick = function (){ 
 		  searchBtnLlickEvent();

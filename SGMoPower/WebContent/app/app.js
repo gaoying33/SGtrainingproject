@@ -1,6 +1,6 @@
 define(['text'], function(text) {
 	
-	//cube.gatewayURL = "http://localhost:9998";
+	cube.userGatewayURL = "http://localhost:9980";
 	
 	cube.importComponent("layout.include");
 	cube.importComponent("datacontainer.dataform");

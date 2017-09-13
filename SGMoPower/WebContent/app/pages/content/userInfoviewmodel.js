@@ -3,27 +3,28 @@ define(["RESTClient"], function(RESTClient) {
 	var PageViewModel = function(params) {
 		var self = this;
 		
-		self.url = cube.gatewayURL + "/employee/";
-		self.id = cube.obj(params.id);
+		self.url = cube.userGatewayURL + "/tbuser/";
+		self.id = cube.obj("1");
 			
 		
 		self.fields = [
-			{ name : "userName", caption : "用户名", nullable : false }, 
-			{ name : "ID", caption : "身份证", editorType:"LabelEditor",nullable : false,readOnly: true }, 
-			{ name : "RealName", caption : "真实姓名",  editorType:"LabelEditor",nullable : false,readOnly: true }, 
-			{ name : "userPass", caption : "密码", readOnly: false, editorType:"TextEditor",textMode:"password"}, 
-			{ name : "rePass", caption : "确认密码", readOnly: false, editorType:"TextEditor",textMode:"password"}, 
-			{ name : "tel", caption : "电话",validType: "MOBILE"}, 
+			{ name : "loginName", caption : "用户名", nullable : false }, 
+			{ name : "cardID", caption : "身份证", editorType:"LabelEditor",nullable : false,readOnly: true }, 
+			{ name : "realName", caption : "真实姓名",  editorType:"LabelEditor",nullable : false,readOnly: true }, 
+			{ name : "accountBalance", caption : "余额",readOnly: true }, 
+			{ name : "vipLevel", caption : "VIP等级", readOnly: true }, 
+			{ name : "phoneNum", caption : "电话",validType: "MOBILE"}, 
 			{ name : "sex", caption : "性别",editorType: "DropDownEditor",list:[{value:'1',text:'男'},{value:'2',text:'女'}], }, 
 		];
-		
-		self.saved = function() {
-			cube.indicate("保存成功");
+	  
+	  self.saveUserInfo = function() {
+		   	cube.indicate("保存成功");
 		}
-		
-		self.click = function(){
-			cube.getPageViewModelByNode($("#form")).submitForm();
+	  
+	  self.returnUserInfo = function() {
+		   app.setLocation("index.html#map");
 		}
+	 
 	};
 	
 	return PageViewModel;

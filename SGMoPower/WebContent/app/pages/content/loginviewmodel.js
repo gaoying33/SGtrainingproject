@@ -14,8 +14,8 @@ define([], function() {
 			//cube.getPageViewModelByNode($("#form")).submitForm();
 		}
 		self.fields = [
-			{ name: "userName", caption: "用户名", editorType: "TextEditor", nullable:false,validType:"NOTNULL"},
-			{ name : "userPass", caption : "密码", editorType:"TextEditor",textMode:"password",nullable : false,validType:"NOTNULL"},
+			{ name: "loginName", caption: "用户名", editorType: "TextEditor", nullable:false,validType:"NOTNULL"},
+			{ name : "loginPSW", caption : "密码", editorType:"TextEditor",textMode:"password",nullable : false,validType:"NOTNULL"},
 		];
 		
 		

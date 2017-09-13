@@ -14,8 +14,19 @@ define([], function() {
 			hasChildren : false,
 		}, {
 			text : '我的信息',
-			route : "#userInfo",
-			hasChildren : false
+			route : "#map",
+			hasChildren: true,
+			children:cube.array([
+				{text: '基本信息', 
+				route: "#userInfo",
+    			hasChildren: false} ,
+    			{text: '修改密码', 
+    				route: "#changePass",
+        			hasChildren: false} 
+				])
+			
+			
+			
 		} ];
 
 		self.onSelectItemChanged = function(p_value) {

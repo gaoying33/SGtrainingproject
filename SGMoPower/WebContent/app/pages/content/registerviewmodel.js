@@ -8,39 +8,28 @@ define([], function() {
 
 	     
 		self.fields = [
-			{ name : "userName", caption : "用户名", nullable : false,validType:"NOTNULL"}, 
-			{ name : "ID", caption : "身份证", nullable : false, validType:"IDCARD"}, 
-			{ name : "RealName", caption : "真实姓名", nullable : false,validType:"NOTNULL"}, 
-			{ name : "userPass", caption : "密码", readOnly: false, editorType:"TextEditor",textMode:"password",validType:"NOTNULL"}, 
+			{ name : "loginName", caption : "用户名", nullable : false,validType:"^.{3,20}$",RvalidType:"" }, 
+			{ name : "cardID", caption : "身份证", nullable : false, validType:"IDCARD"}, 
+			{ name : "realName", caption : "真实姓名", nullable : false,validType:"NOTNULL"}, 
+			{ name : "loginPSW", caption : "密码", readOnly: false, editorType:"TextEditor",textMode:"password",validType:"NOTNULL"}, 
 			{ name : "rePass", caption : "确认密码", readOnly: false, editorType:"TextEditor",textMode:"password",validType:"NOTNULL"}, 
-			{ name : "tel", caption : "电话",validType: "MOBILE"}, 
+			{ name : "phoneNum", caption : "电话",validType: "MOBILE"}, 
 			{ name : "sex", caption : "性别",editorType: "DropDownEditor",list:[{value:'1',text:'男'},{value:'2',text:'女'}], }, 
           ];
 		
 		self.showModalDialog = function() {
-			
 			var f = cube.getPageViewModelByNode($("#form"));
-			alert(f.data.userPass);
+			if(typeof(f.data.userPass)=="undefined" || f.data.userPass=='' )
+				 $("#loginPSWHint").text("请输入密码");
+			else
+				 $("#loginPSWHint").text("");
+			 if(f.data.userPass != f.data.rePass)
+				 $("#loginPSWHint").text("两次密码需保证一致");
+			 else
+				 $("#loginPSWHint").text("");
+
 		}
-		/*
-		self.saved = function() {
-			cube.indicate("保存成功");
-		}
-		
-		self.click = function(){
-			cube.getPageViewModelByNode($("#form")).submitForm();
-		}
-	    
-		
-		self.rfields = [
-			{ name : "num", caption : "用户名*", nullable : false }, 
-			{ name : "ID", caption : "身份证*", nullable : false }, 
-			{ name : "num", caption : "真实姓名", nullable : false }, 
-			{ name : "pass", caption : "密码", readOnly: false, editorType:"TextEditor",textMode:"password"}, 
-			{ name : "repass", caption : "确认密码", readOnly: false, editorType:"TextEditor",textMode:"password"}, 
-			{ name : "tel", caption : "电话" , validType: "MOBILE"}, 
-			{ name : "sex", caption : "性别",editorType: "DropDownEditor" }, 
-	 	];*/
+
 	};
 
 	return PageViewModel;
