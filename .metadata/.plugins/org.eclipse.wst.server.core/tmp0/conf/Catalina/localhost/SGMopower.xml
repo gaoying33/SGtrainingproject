@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="C:\Users\AmyGao\Desktop\SGTrainingProject\SGtrainingproject\SGMopower\WebContent" path="/SGMopower" reloadable="true" source="org.eclipse.jst.jee.server:SGMopower"><Resources><PreResources base="C:\Users\AmyGao\Desktop\SGTrainingProject\SGtrainingproject\SGMopower\build\classes" classLoaderOnly="false" className="org.apache.catalina.webresources.DirResourceSet" internalPath="/" webAppMount="/WEB-INF/classes"/></Resources></Context>
